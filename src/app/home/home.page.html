@@ -9,8 +9,14 @@
       ArcGIS Explorer - DHIMAR
     </ion-title>
 
-    <!-- Settings Button -->
+    <!-- Basemap Selector and Settings Button -->
     <ion-buttons slot="end">
+      <ion-select [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()" placeholder="Select Basemap">
+        <ion-select-option value="satellite">Satellite</ion-select-option>
+        <ion-select-option value="streets">Streets</ion-select-option>
+        <ion-select-option value="topo">Topographic</ion-select-option>
+        <!-- Add more basemaps as needed -->
+      </ion-select>
       <ion-button>
         <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
       </ion-button>
@@ -25,14 +31,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Container for ArcGIS Map or Content -->
+  <!-- Container for ArcGIS Map -->
   <div id="container" style="height: 100%; width: 100%; background-color: #f0f0f5;">
-    <!-- Custom content can be loaded here -->
+    <!-- Map will be displayed here -->
   </div>
 
   <!-- Button to update to the current position -->
-  <ion-button expand="full" color="primary" (click)="updateToCurrentPosition()">
-    Update to Current Position
+  <ion-button class="update-position-btn" (click)="updateToCurrentPosition()">
+    Update Position
   </ion-button>
 
   <!-- Conditional Card -->
@@ -43,11 +49,9 @@
     <ion-card-content>
       This app utilizes the ArcGIS API to display and analyze spatial data. Use the map above to explore geospatial data interactively.
       <!-- Button to close the card -->
-      <ion-button color="primary " expand="block" (click)="closeCard()">
+      <ion-button color="primary" expand="block" (click)="closeCard()">
         Tutup
       </ion-button>
-
-
     </ion-card-content>
   </ion-card>
 </ion-content>

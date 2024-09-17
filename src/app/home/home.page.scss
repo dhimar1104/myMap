@@ -24,3 +24,16 @@
 #container a {
   text-decoration: none;
 }
+
+//* CSS for positioning the button */
+.update-position-btn {
+  position: absolute;
+  bottom: 20px;  /* Position the button near the bottom of the screen */
+  right: 10px; /* Adjusts distance from the right */
+  z-index: 999;  /* Ensures button stays on top of the map */
+  font-size: 12px;  /* Makes the text smaller */
+  padding: 4px 8px; /* Adjust padding to make the button smaller */
+  border-radius: 4px;  /* Rounded corners for the button */
+}
+
+
