@@ -1,20 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- Back Button -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
     <ion-title>
-      Blank
+      ArcGIS Explorer - DHIMAR
     </ion-title>
+
+    <!-- Settings Button -->
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">ArcGIS API</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Container for ArcGIS Map or Content -->
+  <div id="container" style="height: 100%; width: 100%; background-color: #f0f0f5;">
+    <!-- Custom content can be loaded here -->
   </div>
+
+  <!-- Button to update to the current position -->
+  <ion-button expand="full" color="primary" (click)="updateToCurrentPosition()">
+    Update to Current Position
+  </ion-button>
+
+  <!-- Conditional Card -->
+  <ion-card *ngIf="showCard">
+    <ion-card-header>
+      <ion-card-title>Explore GIS Data</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      This app utilizes the ArcGIS API to display and analyze spatial data. Use the map above to explore geospatial data interactively.
+      <!-- Button to close the card -->
+      <ion-button color="primary " expand="block" (click)="closeCard()">
+        Tutup
+      </ion-button>
+
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

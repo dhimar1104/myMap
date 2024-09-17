@@ -145,5 +145,12 @@
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
     }
-  }
+  },
+  "assets": [
+    {
+      "glob": "**/*",
+      "input": "node_modules/@arcgis/core/assets",
+      "output": "/assets/"
+    }
+  ]
 }
