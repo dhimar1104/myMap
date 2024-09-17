@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   private latitude: number | any;
   private longitude: number | any;
   private view: MapView | undefined;
-  selectedBasemap: string = 'satellite'; // Default basemap ID
+  selectedBasemap: string = 'topo'; // Default basemap ID
   private userLocationGraphic: Graphic | undefined;
 
   // URL Layanan Cuaca NOAA
@@ -29,8 +29,8 @@ export class HomePage implements OnInit {
 
   public async ngOnInit() {
     // Set default location (London)
-    this.longitude = -95.6892; // Longitude for Topeka, Kansas
-    this.latitude = 39.0458;  // Latitude for Topeka, Kansas
+    this.longitude = -79.8133; // Longitude for Asheboro, NC
+    this.latitude = 35.7072;  // Latitude for Asheboro, NC
 
     // Initialize the map with the default basemap
     const map = new Map({
@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
       container: 'container',  // Ensure this ID is in the template
       map: map,
       center: [this.longitude, this.latitude], // Default center (London)
-      zoom: 12
+      zoom: 4
     });
 
     // Attempt to add the weather service layer
